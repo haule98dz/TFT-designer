@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <label>Width:&nbsp</label>
+    <input type="number" id="inputWidth">
+    <label>px</label></br>
+    <label>Height: </label>
+    <input type="number" id="inputHeight">
+    <label>px</label></br>
+    <button id="buttonOk" onclick="setResolution()">Apply</button></br>
+    <p id="coordinate">(x, y)=</p>
+    <input type="color" id='colorPicker'>Color</br></br>
+    <input type="checkbox" id="grid" onchange="gridOnOff()">
+    <label for="grid">Grid</label><br>
+    
+    <fieldset id="drawingElements">
+        <legend>Drawing elements</legend>
+        <button class="btn" id="none" onmousedown="toolClicked(this.id)">None</button>
+        <button class="btn" id="pixel" onmousedown="toolClicked(this.id)">Pixel</button>
+        <button class="btn" id="line" onmousedown="toolClicked(this.id)">Line</button>
+        <button class="btn" id="rect" onmousedown="toolClicked(this.id)">Rectangle</button>
+    </fieldset>
+    <fieldset id="edit">
+        <legend>Edit</legend>
+        <button class="btn" id="select" onmousedown="editClicked(this.id)">Move</button>
+        <button class="btn" id="move" onmousedown="editClicked(this.id)">Move</button>
+        <button class="btn" id="copy" onmousedown="editClicked(this.id)">Copy</button>
+    </fieldset>
+    <fieldset id="properties">
+        <legend>Properties</legend>
+    </fieldset>
+
+    <canvas id="gc" width="800" height="600"></canvas>
+    <div id="code">Code:</div>
+    <script src="init.js"></script>
+    <script src="elements.js"></script>
+    <script src="main.js"></script>
+    <script src="events.js"></script>
+</body>
+
+</html>
